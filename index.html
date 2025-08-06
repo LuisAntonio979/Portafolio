@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Antonio Jiménez | Arquitecto de Soluciones Tecnológicas</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portafolio profesional de Luis Antonio Jiménez, Arquitecto de Soluciones Tecnológicas especializado en Análisis de Datos, Gestión de Proyectos y Salesforce.">
+    <meta name="keywords" content="Luis Antonio Jiménez, Data Analyst, Project Manager, Salesforce Ranger, Power BI, Python, Portfolio, CV, Resume">
+    
+    <!-- Open Graph & Twitter Card Meta Tags -->
+    <meta property="og:title" content="Luis Antonio Jiménez | Arquitecto de Soluciones Tecnológicas">
+    <meta property="og:description" content="Especializado en Análisis de Datos, Gestión de Proyectos y Salesforce.">
+    <meta property="og:image" content="https://i.imgur.com/VoIUG79.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="https://i.imgur.com/VoIUG79.png">
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0077B6;
+            --secondary-color: #00B4D8;
+            --background-color: #F8F9FA;
+            --surface-color: #FFFFFF;
+            --text-color: #212529;
+            --subtle-text-color: #5a6268;
+        }
+
+        [data-bs-theme="dark"] {
+            --primary-color: #00B4D8;
+            --secondary-color: #90E0EF;
+            --background-color: #121212;
+            --surface-color: #1E1E1E;
+            --text-color: #EAEAEA;
+            --subtle-text-color: #a0a0a0;
+        }
+
+        html { scroll-padding-top: 72px; }
+        body { font-family: 'Lato', sans-serif; background-color: var(--background-color); color: var(--text-color); transition: background-color 0.3s ease, color 0.3s ease; }
+        h1, h2, h3, h4, h5, h6, .navbar-brand { font-family: 'Montserrat', sans-serif; }
+        
+        .navbar { transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; background-color: rgba(var(--bs-body-bg-rgb), 0.9) !important; backdrop-filter: blur(5px); }
+        .navbar .nav-link { font-weight: 600; color: var(--subtle-text-color); }
+        .navbar .nav-link.active, .navbar .nav-link:hover { color: var(--primary-color); }
+
+        .hero .lead { color: var(--text-color); }
+        #credibility { background-color: var(--surface-color); }
+        .text-muted { color: var(--subtle-text-color) !important; }
+
+        .section-title { font-weight: 700; color: var(--primary-color); }
+        .btn-primary { background-color: var(--primary-color); border-color: var(--primary-color); }
+        .btn-outline-primary { color: var(--primary-color); border-color: var(--primary-color); }
+        .btn-outline-primary:hover { background-color: var(--primary-color); border-color: var(--primary-color); color: white; }
+        .hero { padding: 8rem 0; }
+        .hero .display-4 { font-weight: 800; }
+        
+        .skill-card-highlight { 
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 0.5rem; 
+            text-align: center; 
+            padding: 1.5rem 1rem; 
+            transition: background-color 0.4s ease, border-color 0.4s ease; 
+        }
+        .skill-card-highlight .badge-icon { font-size: 2.5rem; margin-bottom: 0.75rem; color: var(--subtle-text-color); transition: color 0.4s ease; }
+        .skill-card-highlight h3 { font-size: 1rem; font-weight: 600; color: var(--subtle-text-color); transition: color 0.4s ease, font-weight 0.4s ease; }
+        
+        .skill-card-highlight.highlight .badge-icon,
+        .skill-card-highlight.highlight h3 { 
+            color: var(--primary-color);
+            font-weight: 600;
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+        
+        .carousel-item .testimonial-card { background-color: transparent; border: none; }
+        .testimonial-carousel-wrapper { position: relative; }
+        .testimonial-carousel-wrapper .carousel-control-prev, 
+        .testimonial-carousel-wrapper .carousel-control-next {
+            position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px;
+            background-color: rgba(var(--bs-body-color-rgb), 0.1); border-radius: 50%; opacity: 0.7; transition: opacity 0.2s ease;
+        }
+        .testimonial-carousel-wrapper .carousel-control-prev { left: -60px; }
+        .testimonial-carousel-wrapper .carousel-control-next { right: -60px; }
+        .testimonial-carousel-wrapper .carousel-control-prev:hover, 
+        .testimonial-carousel-wrapper .carousel-control-next:hover { opacity: 1; }
+        .carousel-control-prev-icon, .carousel-control-next-icon { filter: invert(var(--bs-body-color-rgb), 0)); }
+        [data-bs-theme="dark"] .carousel-control-prev-icon, [data-bs-theme="dark"] .carousel-control-next-icon { filter: invert(1); }
+        @media (max-width: 992px) {
+            .testimonial-carousel-wrapper .carousel-control-prev, 
+            .testimonial-carousel-wrapper .carousel-control-next { display: none; }
+        }
+
+        .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; background-color: var(--surface-color); }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important; }
+        .project-card img { height: 220px; object-fit: cover; }
+        .project-tags span { background-color: var(--background-color); color: var(--subtle-text-color); font-size: 0.8rem; font-weight: 600; }
+        
+        #trailblazer { background-color: var(--surface-color); }
+        .trailblazer-achievement { display: flex; align-items: center; }
+        .trailblazer-achievement img { max-height: 90px; width: auto; margin-right: 1.5rem; flex-shrink: 0; }
+        .trailblazer-achievement h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--text-color); }
+        .stat-card { background-color: var(--background-color); padding: 1.5rem; border-radius: 0.5rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); height: 100%; }
+        .stat-number { font-size: 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--primary-color); line-height: 1; }
+        .stat-label { font-size: 1rem; color: var(--subtle-text-color); }
+        [data-bs-theme="dark"] .stat-card { box-shadow: none; }
+
+        .contact-links a { font-size: 2.5rem; color: var(--secondary-color); }
+        .contact-form-wrapper { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; }
+        .contact-form-wrapper.active { max-height: 500px; }
+        .theme-switcher { position: fixed; bottom: 20px; right: 20px; z-index: 1050; }
+        a:focus-visible, button:focus-visible { outline: 2px solid var(--secondary-color); outline-offset: 2px; box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.25); border-radius: 2px; }
+
+        /* --- ESTILOS SECCIÓN INTERACTIVA --- */
+        :root, [data-bs-theme="light"] {
+            --terminal-surface-color: rgba(10, 25, 47, 0.85);
+            --terminal-border-color: #30363d; --terminal-text-color: #c9d1d9; --terminal-header-bg: #161b22;
+            --terminal-header-text: #8b949e; --terminal-prompt-color: #d9931e; --terminal-comment-color: #8b949e;
+            --terminal-keyword-color: #ff7b72; --terminal-function-color: #d2a8ff; --terminal-string-color: #7ee787;
+            --terminal-variable-color: #79c0ff; --terminal-boolean-color: #ff7b72; --terminal-quote-color: #e5c07b;
+            --terminal-special-boolean-color: #e5c07b;
+        }
+        
+        #approach { 
+            padding: 6rem 0; 
+            background-color: var(--background-color);
+            transition: background-color 0.3s ease;
+        }
+        [data-bs-theme="dark"] #approach { 
+            background-color: #000;
+        }
+
+        .terminal-window {
+            max-width: 950px; margin: 0 auto; background: var(--terminal-surface-color); border: 1px solid var(--terminal-border-color);
+            border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); backdrop-filter: blur(10px); transition: all 0.3s ease;
+        }
+        .terminal-header {
+            background-color: var(--terminal-header-bg); padding: 0.75rem; border-bottom: 1px solid var(--terminal-border-color);
+            border-top-left-radius: 8px; border-top-right-radius: 8px; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease;
+        }
+        .terminal-buttons { display: flex; gap: 0.5rem; flex-shrink: 0;}
+        .term-btn { width: 12px; height: 12px; border-radius: 50%; }
+        .close { background-color: #ff5f56; } .min { background-color: #ffbd2e; } .max { background-color: #27c93f; }
+        .terminal-title {
+            color: var(--terminal-header-text); font-family: 'Montserrat', sans-serif; font-weight: 700;
+            transition: color 0.3s ease; font-size: 1.5rem; /* MODIFICADO */
+            flex-grow: 1; text-align: center;
+        }
+        .terminal-body {
+            font-family: 'Fira Code', monospace; font-size: 0.85rem; line-height: 1.7;
+            padding: 1.5rem; color: var(--terminal-text-color); height: 700px; overflow-y: auto; transition: color 0.3s ease;
+        }
+        .terminal-line { white-space: pre-wrap; margin-bottom: 0.5rem; }
+        .prompt { color: var(--terminal-prompt-color); }
+        .comment { color: var(--terminal-comment-color); font-style: italic; }
+        .keyword { color: var(--terminal-keyword-color); }
+        .function { color: var(--terminal-function-color); }
+        .string { color: var(--terminal-string-color); }
+        .special-boolean { color: var(--terminal-special-boolean-color); }
+        .user-choice { font-weight: bold; }
+        .emoji { opacity: 0.7; }
+
+        .cursor {
+            display: inline-block; width: 8px; height: 1rem;
+            background: var(--terminal-text-color); animation: blink 1s steps(1) infinite; margin-left: 5px;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .signature-img { /* MODIFICADO Y CORREGIDO */
+            max-width: 250px;
+            margin-top: 1rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .help-text {
+            color: var(--terminal-comment-color); font-style: italic; font-size: 0.9rem;
+            text-align: center; margin-top: 1rem; opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .help-text.visible { opacity: 0.7; }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar">
+
+    <button class="btn btn-secondary theme-switcher" id="theme-switcher" aria-label="Cambiar tema">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#hero">Luis Antonio Jiménez</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="#credibility">Capacidades en Acción</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#trailblazer">Trailblazer</a></li>
+                <li class="nav-item"><a class="nav-link" href="#approach">¿Quién Soy?</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+              </ul>
+              <div class="d-flex align-items-center">
+                <a href="#contact" class="btn btn-primary d-none d-lg-block">Hablemos</a>
+              </div>
+            </div>
+          </div>
+    </nav>
+
+    <header id="hero" class="hero text-center">
+        <div class="container">
+            <h1 class="display-4">Luis Antonio Jiménez</h1>
+            <h2 class="h1 fw-light text-primary mb-4">Arquitecto de Soluciones Tecnológicas</h2>
+            <p class="lead col-md-8 mx-auto mb-4">
+                Ingeniero de Sistemas con más de 10 años de experiencia transformando desafíos de negocio en soluciones eficientes. Como Salesforce Ranger y solucionador versátil, mi objetivo es simple: aplicar mis habilidades en análisis de datos y gestión de proyectos para impulsar tus objetivos estratégicos.
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="#projects" class="btn btn-primary btn-lg px-4 gap-3">Ver Mis Proyectos</a>
+                <a href="https://linkedin.com/in/luisantoniojimenezpernia" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-lg px-4">Conectar en LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="credibility" class="py-5">
+            <div class="container">
+                <div class="row g-3 justify-content-center mb-5">
+                    <div class="col-lg-2 col-md-4 col-6"><div class="skill-card-highlight h-100" id="skill-pm"><i class="fas fa-users-cog badge-icon"></i><h3 class="h6">Gestión de Proyectos</h3></div></div>
+                    <div class="col-lg-2 col-md-4 col-6"><div class="skill-card-highlight h-100" id="skill-data"><i class="fas fa-chart-line badge-icon"></i><h3 class="h6">Análisis de Datos</h3></div></div>
+                    <div class="col-lg-2 col-md-4 col-6"><div class="skill-card-highlight h-100" id="skill-bi"><i class="fas fa-chart-pie badge-icon"></i><h3 class="h6">Business Intelligence</h3></div></div>
+                    <div class="col-lg-2 col-md-4 col-6"><div class="skill-card-highlight h-100" id="skill-dev"><i class="fas fa-code badge-icon"></i><h3 class="h6">Desarrollo e Innovación</h3></div></div>
+                    <div class="col-lg-2 col-md-4 col-6"><div class="skill-card-highlight h-100" id="skill-strategy"><i class="fas fa-brain badge-icon"></i><h3 class="h6">Pensamiento Estratégico</h3></div></div>
+                    <div class="col-lg-2 col-md-4 col-6"><div class="skill-card-highlight h-100" id="skill-security"><i class="fas fa-shield-alt badge-icon"></i><h3 class="h6">Seguridad de Red</h3></div></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="testimonial-carousel-wrapper">
+                            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                                <div class="carousel-inner text-center">
+                                    <!-- Testimonios se cargan dinámicamente -->
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5 display-5">Proyectos: Del Desafío al Impacto</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow-sm project-card">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop" class="card-img-top" alt="Almacén con estanterías">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 card-title">Transformación Digital de la Gestión de Inventario</h3>
+                                <p class="card-text fw-bold text-success">Reducción del 50% en tiempo de gestión y eliminación del 100% de pérdidas.</p>
+                                <div class="project-tags mb-3">
+                                    <span class="badge rounded-pill p-2">Gestión de Proyectos</span>
+                                    <span class="badge rounded-pill p-2">Análisis de Requerimientos</span>
+                                    <span class="badge rounded-pill p-2">Gestión del Cambio</span>
+                                </div>
+                                <button class="btn btn-secondary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal" data-project-id="1">Ver Caso de Estudio</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow-sm project-card">
+                             <img src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?q=80&w=1964&auto=format&fit=crop" class="card-img-top" alt="Sala de servidores con luces azules">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 card-title">Modernización y Securización de Infraestructura de Red</h3>
+                                <p class="card-text fw-bold text-success">Incremento radical de la seguridad y centralización de la gestión de usuarios.</p>
+                                <div class="project-tags mb-3">
+                                    <span class="badge rounded-pill p-2">Seguridad de Red</span>
+                                    <span class="badge rounded-pill p-2">Admin. de Sistemas</span>
+                                    <span class="badge rounded-pill p-2">Fortinet</span>
+                                </div>
+                                <button class="btn btn-secondary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal" data-project-id="2">Ver Caso de Estudio</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow-sm project-card">
+                             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" class="card-img-top" alt="Gráficos de datos en una pantalla de laptop">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 card-title">Dashboard de BI para Optimización de Ventas</h3>
+                                <p class="card-text fw-bold text-success">Automatización de tareas y visibilidad en tiempo real del rendimiento.</p>
+                                <div class="project-tags mb-3">
+                                    <span class="badge rounded-pill p-2">Análisis de Datos</span>
+                                    <span class="badge rounded-pill p-2">Business Intelligence</span>
+                                    <span class="badge rounded-pill p-2">Excel Avanzado</span>
+                                </div>
+                               <button class="btn btn-secondary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal" data-project-id="3">Ver Caso de Estudio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="trailblazer" class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5 display-5">Mi Trayectoria Trailblazer</h2>
+                <div class="row justify-content-center g-5 mb-5">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="trailblazer-achievement">
+                            <img src="https://i.imgur.com/DC5CHpB.png" alt="Insignia de Salesforce Ranger">
+                            <div>
+                                <h4>Salesforce Ranger</h4>
+                                <p class="text-muted">Un logro que representa un compromiso profundo y un conocimiento extenso del ecosistema Salesforce.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6">
+                        <div class="trailblazer-achievement">
+                            <img src="https://i.imgur.com/9MD6zO7.png" alt="Insignia Agentblazer Innovator">
+                            <div>
+                                <h4>Agentblazer Innovator</h4>
+                                <p class="text-muted">Reconocimiento a la combinación estratégica de fundamentos de Service Cloud con las innovaciones de IA más demandadas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-2 col-md-3 col-6"><div class="stat-card"><div class="stat-number">119</div><div class="stat-label">Insignias</div></div></div>
+                    <div class="col-lg-2 col-md-3 col-6"><div class="stat-card"><div class="stat-number">62k+</div><div class="stat-label">Puntos</div></div></div>
+                    <div class="col-lg-2 col-md-3 col-6"><div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Superbadges</div></div></div>
+                    <div class="col-lg-2 col-md-3 col-6"><div class="stat-card"><div class="stat-number">1</div><div class="stat-label">Sello</div></div></div>
+                </div>
+                <div class="text-center mt-5">
+                    <p class="lead fst-italic text-muted">Un sendero con kilómetros por recorrer...</p>
+                    <a href="https://www.salesforce.com/trailblazer/luisantonio" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg mt-3">Ver mi Perfil Completo en Trailblazer</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="approach">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="term-btn close"></span><span class="term-btn min"></span><span class="term-btn max"></span>
+                    </div>
+                    <div class="terminal-title">¿Y quién es Luis Antonio?</div>
+                    <div style="width: 54px;"></div>
+                </div>
+                <div class="terminal-body" id="terminal-body"></div>
+            </div>
+            <p class="help-text" id="help-text"></p>
+        </section>
+
+        <section id="contact" class="py-5">
+            <div class="container text-center col-md-8 mx-auto">
+                 <h2 class="section-title mb-4 display-5">¿Listo para Construir Algo Grande? Hablemos.</h2>
+                 <p class="lead mb-4">Estoy buscando activamente mi próxima oportunidad profesional. Si crees que mi perfil encaja con tu equipo, no dudes en contactarme a través de mis redes o enviarme un mensaje directo.</p>
+                 <div class="contact-links">
+                    <a href="mailto:LuisAntonioJimenez@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Correo" class="mx-3"><i class="fas fa-envelope"></i></a>
+                    <a href="https://linkedin.com/in/luisantoniojimenezpernia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="mx-3"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.salesforce.com/trailblazer/luisantonio" target="_blank" rel="noopener noreferrer" aria-label="Trailblazer" class="mx-3"><i class="fab fa-salesforce"></i></a>
+                </div>
+                
+                <div class="mt-4">
+                    <button class="btn btn-outline-primary" id="contact-form-btn">Enviar un Mensaje Directo</button>
+                    <div class="contact-form-wrapper mt-4 text-start" id="contact-form-wrapper">
+                         <form action="https://formspree.io/f/TU_ENDPOINT_DE_FORMSPREE" method="POST" class="contact-form">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Tu Correo Electrónico</label>
+                                <input type="email" name="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mensaje</label>
+                                <textarea name="message" id="message" class="form-control" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="py-4 text-white" style="background-color: var(--dark-bg);">
+         <div class="container text-center">
+            <p class="mb-0">© 2024 Luis Antonio Jiménez. Diseñado con pasión y código.</p>
+        </div>
+    </footer>
+    
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 section-title" id="projectModalLabel">Título del Proyecto</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="projectModalBody"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- SCRIPT PRINCIPAL ---
+            const mainNavbar = document.getElementById('mainNavbar');
+            if (mainNavbar) {
+                const navLinks = mainNavbar.querySelectorAll('.nav-link');
+                const sections = document.querySelectorAll('main section, header');
+                function onScroll() {
+                    if (window.scrollY > 50) {
+                        mainNavbar.classList.add('shadow-sm');
+                    } else {
+                        mainNavbar.classList.remove('shadow-sm');
+                    }
+                    let currentSection = '';
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        if (window.scrollY >= sectionTop - 72) {
+                            currentSection = section.getAttribute('id');
+                        }
+                    });
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if(link.getAttribute('href') === `#${currentSection}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+                window.addEventListener('scroll', onScroll);
+                onScroll();
+            }
+            
+            const testimonialsData = [
+                { quote: "Como líder de área, el enfoque estratégico de Luis Antonio fue clave para el éxito de varios proyectos. Desarrolló métodos innovadores que mejoraron significativamente la eficiencia de nuestro equipo.", author: "— Jorgeelías Mendez, Gerente de RRHH en Servicios CASMEN, C.A.", skills: ['pm', 'strategy', 'dev'] },
+                { quote: "Juntos llevamos adelante proyectos clave para lograr una infraestructura más robusta, segura y alineada con el negocio. Luis Antonio tuvo un rol fundamental, aportando una mirada estratégica, resolutiva y siempre enfocada en el largo plazo.", author: "— Jonathan Urbano, Coordinador de Tecnología en Servicios CASMEN", skills: ['pm', 'strategy', 'security', 'dev'] },
+                { quote: "Con un presupuesto limitado, logró crear una solución de BI que revolucionó nuestro negocio. Su creatividad para maximizar las herramientas existentes superó todas nuestras expectativas.", author: "— David Ginard, CEO Pholow Mallorca", skills: ['bi', 'data', 'dev'] }
+            ];
+            const carousel = document.getElementById('testimonialCarousel');
+            const skillCards = document.querySelectorAll('.skill-card-highlight');
+            function highlightSkills(index) {
+                skillCards.forEach(card => card.classList.remove('highlight'));
+                if (testimonialsData[index]) {
+                    const skillsToHighlight = testimonialsData[index].skills;
+                    skillsToHighlight.forEach(skillId => {
+                        const card = document.getElementById(`skill-${skillId}`);
+                        if (card) card.classList.add('highlight');
+                    });
+                }
+            }
+            if (carousel) {
+                const carouselInner = carousel.querySelector('.carousel-inner');
+                carouselInner.innerHTML = ''; 
+                testimonialsData.forEach((testimonial, index) => {
+                    const item = document.createElement('div');
+                    item.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+                    item.innerHTML = `<div class="testimonial-card p-4"><p class="fst-italic h5">${testimonial.quote}</p><cite class="fw-bold text-primary d-block mt-3">${testimonial.author}</cite></div>`;
+                    carouselInner.appendChild(item);
+                });
+                
+                highlightSkills(0);
+                carousel.addEventListener('slide.bs.carousel', event => {
+                    highlightSkills(event.to);
+                });
+            }
+
+            const themeSwitcher = document.getElementById('theme-switcher');
+            const themeIcon = themeSwitcher.querySelector('i');
+            const htmlEl = document.documentElement;
+            const setTheme = (theme) => {
+                htmlEl.setAttribute('data-bs-theme', theme);
+                localStorage.setItem('theme', theme);
+                themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            };
+            const storedTheme = localStorage.getItem('theme');
+            const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            const currentTheme = storedTheme ? storedTheme : preferredTheme;
+            setTheme(currentTheme);
+            themeSwitcher.addEventListener('click', () => {
+                const newTheme = htmlEl.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+                setTheme(newTheme);
+            });
+            
+            const contactFormBtn = document.getElementById('contact-form-btn');
+            const contactFormWrapper = document.getElementById('contact-form-wrapper');
+            if(contactFormBtn && contactFormWrapper) {
+                contactFormBtn.addEventListener('click', () => {
+                    contactFormWrapper.classList.toggle('active');
+                });
+            }
+
+            const projectModal = document.getElementById('projectModal');
+            if (projectModal) {
+                projectModal.addEventListener('show.bs.modal', function(event) {
+                    const button = event.relatedTarget;
+                    const projectId = button.getAttribute('data-project-id');
+                    const project = {
+                    '1': {"title":"Transformación Digital de la Gestión de Inventario","problem":"Una empresa de construcción en crecimiento enfrentaba pérdidas de material y gestión ineficiente debido a procesos de inventario completamente manuales.","process":"Lideré un análisis de requerimientos y un estudio de mercado para seleccionar el software (Valery) que mejor se adaptara a sus necesidades y presupuesto. Gestioné el ciclo de vida completo del proyecto, desde la adquisición hasta la implementación, migración de datos y, crucialmente, la capacitación de usuarios.","impact":"<strong>Eliminación del 100%</strong> de las pérdidas de inventario, <strong>reducción del 50%</strong> en el tiempo de gestión y <strong>erradicación total</strong> de las compras de urgencia.","challenge":"El mayor reto fue superar la resistencia al cambio en un entorno no tecnológico. Esto me enseñó el valor de la <strong>comunicación empática</strong> y la <strong>capacitación personalizada</strong> como pilares fundamentales de la gestión del cambio."},
+                    '2': {"title":"Modernización y Securización de Infraestructura de Red","problem":"La red operaba sin un dominio centralizado, creando una vulnerabilidad crítica de seguridad y una gestión de usuarios ineficiente.","process":"Como nuevo Gerente de Tecnología, audité la infraestructura y presenté un caso de negocio a la directiva. Una vez aprobado, diseñé e implementé la nueva arquitectura de red basada en dominio, introduciendo políticas de seguridad y la plataforma Fortinet.","impact":"Incremento radical de la seguridad, gestión centralizada de usuarios y recursos, y optimización de la productividad mediante el control de acceso.","challenge":"El desafío fue doble: por un lado, <strong>traducir el riesgo técnico en un argumento de negocio convincente</strong> para la junta directiva y, por otro, asegurar una ejecución técnica impecable. Aprendí a comunicar de manera ejecutiva y a equilibrar la estrategia con la implementación."},
+                    '3': {"title":"Dashboard de BI para Optimización de Ventas","problem":"Procesos de venta y facturación manuales limitaban la eficiencia y la visibilidad del negocio de un concesionario de telefonía.","process":"Desarrollé una herramienta integral en MS Excel que permitía crear cotizaciones dinámicas, generar reportes automáticos de ventas y emitir facturas estandarizadas.","impact":"Automatización de tareas administrativas, proporcionando al negocio una visibilidad en tiempo real de su rendimiento y mejorando la toma de decisiones estratégicas.","challenge":"El reto fue diseñar una solución potente y escalable dentro de estrictas limitaciones presupuestarias. Aprendí el valor de la <strong>recursividad y la eficiencia</strong>, demostrando que la herramienta \"correcta\" no siempre es la más compleja, sino la que mejor resuelve el problema del cliente."}
+                }[projectId];
+                    projectModal.querySelector('.modal-title').textContent = project.title;
+                    projectModal.querySelector('.modal-body').innerHTML = `<h5 class="fw-bold">El Problema</h5><p>${project.problem}</p><h5 class="fw-bold mt-3">Mi Proceso</h5><p>${project.process}</p><h5 class="fw-bold mt-3">Impacto y Resultados</h5><p>${project.impact}</p><h5 class="fw-bold mt-3">Desafío y Aprendizaje Clave</h5><p>${project.challenge}</p>`;
+                });
+            }
+        });
+    </script>
+    
+    <script>
+        // --- SCRIPT PARA LA SECCIÓN INTERACTIVA ---
+        document.addEventListener('DOMContentLoaded', function () {
+            const terminalBody = document.getElementById('terminal-body');
+            if (!terminalBody) return;
+
+            const helpText = document.getElementById('help-text');
+            let isWaitingForInput = false;
+            let currentStepIndex = 0;
+            const cursorSpan = '<span class="cursor"></span>';
+
+            const steps = [
+                { type: 'prompt', text: '¿Lo averiguamos? <span class="user-choice">[Y/N]</span>', waitFor: 'YN', yesAction: 'start_profile', noAction: 'no_1' },
+                { type: 'response', id: 'no_1', text: '<span class="prompt">&gt;&gt;&gt; </span><span class="comment">Entendido. Ejecutando de todas formas... el perfil es demasiado interesante para omitirlo. ;)</span>', next: 'start_profile' },
+                { type: 'typewriter', id: 'start_profile', text: '<span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import </span><span class="variable">luis_antonio</span>\n<span class="prompt">&gt;&gt;&gt; </span><span class="keyword">help</span>(<span class="variable">luis_antonio</span>.<span class="function">get_profile</span>)\n<span class="comment"># Ejecutando introspección del perfil...</span>\n\n<span class="keyword">def </span><span class="function">get_profile</span>():' },
+                { type: 'typewriter', text: '    <span class="string">"""\n    Ok, llegamos a la parte personal! Soy "Arquitecto de Soluciones" porque me veo\n    como un constructor de puentes, buscando llenar el vacío que hay entre una\n    idea y el código, entre los datos y una decisión de negocio o entre una\n    necesidad y su solución.\n    """</span>' },
+                { type: 'typewriter', text: '    <span class="string">"""\n    Pero muy pocos saben que "mis primeros planos" no surgieron en un aula\n    de clases o en una oficina. <strong>¡Los hice al borde de una piscina!</strong>\n    """</span>' },
+                { type: 'prompt', text: '<span class="comment"># Contemplando la curiosidad en tu rostro... [Presiona cualquier tecla para continuar]</span>', waitFor: 'ANY' },
+                { type: 'typewriter', text: '    <span class="string">"""\n    Como entrenador de natación aprendí a construir estrategias de equipo a partir\n    de la combinación inteligente de las fortalezas y debilidades de sus miembros.\n    """</span>' },
+                { type: 'typewriter', text: '    <strong>"Brazada a brazada, hasta que tengas la meta en tu mano..."</strong>' },
+                { type: 'prompt', text: '<span class="system-question">[SYSTEM] Pero, ¿qué hace un tipo que guió un equipo de natación a ganar un campeonato nacional, metido hasta el cuello entre datos, procesos y sistemas?</span>\n<span class="comment">[Presiona una tecla para ver la respuesta]</span>', waitFor: 'ANY' },
+                { type: 'typewriter', text: '<span class="prompt">&gt;&gt;&gt; </span><span class="string">"Simple: Esa es la mezcla que me define."</span>\n\n<span class="string">"Soy como una combinación extraña, pero interesante y desde luego: Única...\nUn bohemio de tendencia tecnológica con patrones de razonamiento crítico,\nabstracto y curioso-escéptico por naturaleza."</span>' },
+                { type: 'typewriter', text: '<span class="prompt">&gt;&gt;&gt; </span><span class="string">"Lo mismo podemos debatir horas sobre los Imperios Romano u Otomano; que conversar\nacerca de si AuronPlay estará o no en la próxima Velada de Año.\nY no te extrañes si algún día me encuentras escuchando en Spotify una playlist\nde música muy vieja, mientras investigo la Teoría de Cuerdas o acerca de IA\ny Mecánica Cuántica."</span>' },
+                { type: 'prompt', text: '<span class="prompt">&gt;&gt;&gt; </span>Y en cuanto a mis gustos... <span class="comment">[Presiona para continuar]</span>', waitFor: 'ANY' },
+                { type: 'typewriter', text: '<span class="prompt">&gt;&gt;&gt; </span><span class="string">"A ver, en este punto debo ser Claro y Contundente."</span>\n<span class="string">"Sin importar cuántas realidades postule la Ecuación de Schrödinger:"</span>\n<span class="string">"<strong class="special-boolean">\'En esta y en todas las dimensiones y líneas temporales posibles, soy fanático</strong></span>\n<span class="string"><strong class="special-boolean">\'de Los Gloriosos Leones del Caracas; y en todo ese Multiverso, la mejor banda de Rock de La</strong></span>\n<span class="string"><strong class="special-boolean">\'Historia son Los Beatles.\'</strong>"</span>\n\n<span class="string">"¡Esto ya fue demostrado... Por mí mismo! <span class=\'emoji\'>😎</span>"</span>' },
+                { type: 'prompt', text: '<span class="prompt">&gt;&gt;&gt; </span>Supongo que estás de acuerdo conmigo, ¿verdad? <span class="user-choice">[Y/N]</span>', waitFor: 'YN', yesAction: 'final_words', noAction: 'no_2' },
+                { type: 'response', id: 'no_2', text: '<span class="prompt">&gt;&gt;&gt; </span><span class="comment"># Anotado. El debate queda pendiente para el café de la entrevista.</span>', next: 'final_words'},
+                { type: 'typewriter', id: 'final_words', text: '<span class="prompt">&gt;&gt;&gt; </span><em><span class="string">"Y creo que eso es todo... O una parte del todo."</span>\n<span class="string">"En definitiva, soy un tipo normal que procura usar sus virtudes para aprender de\nsus defectos, intentando ser hoy una versión mejorada del Hijo, del Hermano,\ndel Esposo y del Padre que fuí ayer."</span></em>' },
+                { type: 'response', text: '<span class="comment"># Renderizando firma...</span>' },
+                { type: 'response', text: '<img src="https://i.imgur.com/WET3QcD.png" alt="Firma" class="signature-img">' },
+                { type: 'response', text: '<span class="prompt">&gt;&gt;&gt; </span><span class="cursor"></span>' }
+            ];
+
+            let keydownListener = null;
+
+            function typewriter(element, htmlContent, onComplete) {
+                element.innerHTML = '';
+                let tempDiv = document.createElement('div');
+                tempDiv.innerHTML = htmlContent;
+                const textContent = tempDiv.textContent || '';
+                
+                let i = 0;
+                function type() {
+                    if (i < textContent.length) {
+                        element.innerHTML = textContent.substring(0, i + 1).replace(/\n/g, '<br>') + cursorSpan;
+                        i++;
+                        terminalBody.scrollTop = terminalBody.scrollHeight;
+                        setTimeout(type, 15);
+                    } else {
+                        element.innerHTML = htmlContent.replace(/\n/g, '<br>');
+                        onComplete();
+                    }
+                }
+                type();
+            }
+            
+            function processStep() {
+                if (currentStepIndex >= steps.length) {
+                    if (keydownListener) document.removeEventListener('keydown', keydownListener);
+                    helpText.classList.remove('visible');
+                    return;
+                }
+
+                isWaitingForInput = false;
+                helpText.classList.remove('visible');
+                const step = steps[currentStepIndex];
+                const lineEl = document.createElement('div');
+                lineEl.className = 'terminal-line';
+
+                if (step.type === 'prompt') {
+                    lineEl.innerHTML = step.text + ' ' + cursorSpan;
+                    terminalBody.appendChild(lineEl);
+                    isWaitingForInput = true;
+                    helpText.textContent = step.waitFor === 'ANY' ? '[Presiona cualquier tecla]' : '[Presiona Y o N]';
+                    helpText.classList.add('visible');
+                } else if (step.type === 'response') {
+                    lineEl.innerHTML = step.text.replace(/\n/g, '<br>');
+                    terminalBody.appendChild(lineEl);
+                    if (step.next) {
+                        currentStepIndex = steps.findIndex(s => s.id === step.next);
+                    } else {
+                        currentStepIndex++;
+                    }
+                    setTimeout(processStep, 500);
+                } else if (step.type === 'typewriter') {
+                    terminalBody.appendChild(lineEl);
+                    typewriter(lineEl, step.text, () => {
+                        currentStepIndex++;
+                        processStep();
+                    });
+                }
+                terminalBody.scrollTop = terminalBody.scrollHeight;
+            }
+
+            function handleKeyPress(e) {
+                if (!isWaitingForInput) return;
+
+                const step = steps[currentStepIndex];
+                const lastLine = terminalBody.querySelector('.terminal-line:last-child');
+                lastLine.innerHTML = lastLine.innerHTML.replace(cursorSpan, ''); 
+
+                let nextStepId = null;
+
+                if (step.waitFor === 'YN') {
+                    const key = e.key.toLowerCase();
+                    if (key === 'y') {
+                        lastLine.innerHTML += 'Y';
+                        nextStepId = step.yesAction;
+                    } else { 
+                        lastLine.innerHTML += (key === 'n' ? 'N' : '...');
+                        nextStepId = step.noAction;
+                    }
+                } else {
+                    currentStepIndex++;
+                }
+
+                if (nextStepId) {
+                    const foundStep = steps.findIndex(s => s.id === nextStepId);
+                    currentStepIndex = (foundStep !== -1) ? foundStep : currentStepIndex + 1;
+                }
+                
+                isWaitingForInput = false;
+                document.removeEventListener('keydown', handleKeyPress);
+                setTimeout(() => {
+                    processStep();
+                    document.addEventListener('keydown', handleKeyPress);
+                }, 300);
+            }
+            
+            keydownListener = handleKeyPress;
+            processStep();
+            document.addEventListener('keydown', handleKeyPress);
+        });
+    </script>
+</body>
+</html>
