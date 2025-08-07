@@ -170,7 +170,6 @@
         .user-choice { font-weight: bold; }
         .emoji { opacity: 0.7; }
         
-        /* MODIFICADO: Estilos para botones interactivos */
         .user-choice-button {
             font-weight: bold;
             cursor: pointer;
@@ -200,6 +199,41 @@
             transition: opacity 0.5s;
         }
         .help-text.visible { opacity: 0.7; }
+        
+        /* --- ESTILOS AÑADIDOS PARA WHATSAPP --- */
+        .whatsapp-flotante {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: var(--secondary-color);
+            color: #FFF;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1040;
+            transition: all 0.3s ease;
+            text-decoration: none; /* CORREGIDO */
+        }
+        .whatsapp-flotante:hover {
+            transform: scale(1.1);
+            background-color: var(--primary-color);
+            color: #FFF;
+            text-decoration: none; /* CORREGIDO */
+        }
+
+        .contact-links a[href*="wa.me"] {
+            text-decoration: none;
+        }
+        .contact-links .fa-whatsapp {
+            color: var(--secondary-color);
+            transition: color 0.3s ease;
+        }
+        /* Regla de hover eliminada para consistencia */
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNavbar">
@@ -258,9 +292,7 @@
                     <div class="col-lg-8">
                         <div class="testimonial-carousel-wrapper">
                             <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-                                <div class="carousel-inner text-center">
-                                    <!-- Testimonios se cargan dinámicamente -->
-                                </div>
+                                <div class="carousel-inner text-center"></div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
                                 <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
                             </div>
@@ -274,51 +306,9 @@
             <div class="container">
                 <h2 class="section-title text-center mb-5 display-5">Proyectos: Del Desafío al Impacto</h2>
                 <div class="row g-4 justify-content-center">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card h-100 shadow-sm project-card">
-                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop" class="card-img-top" alt="Almacén con estanterías">
-                            <div class="card-body d-flex flex-column">
-                                <h3 class="h5 card-title">Transformación Digital de la Gestión de Inventario</h3>
-                                <p class="card-text fw-bold text-success">Reducción del 50% en tiempo de gestión y eliminación del 100% de pérdidas.</p>
-                                <div class="project-tags mb-3">
-                                    <span class="badge rounded-pill p-2">Gestión de Proyectos</span>
-                                    <span class="badge rounded-pill p-2">Análisis de Requerimientos</span>
-                                    <span class="badge rounded-pill p-2">Gestión del Cambio</span>
-                                </div>
-                                <button class="btn btn-secondary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal" data-project-id="1">Ver Caso de Estudio</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card h-100 shadow-sm project-card">
-                             <img src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?q=80&w=1964&auto=format&fit=crop" class="card-img-top" alt="Sala de servidores con luces azules">
-                            <div class="card-body d-flex flex-column">
-                                <h3 class="h5 card-title">Modernización y Securización de Infraestructura de Red</h3>
-                                <p class="card-text fw-bold text-success">Incremento radical de la seguridad y centralización de la gestión de usuarios.</p>
-                                <div class="project-tags mb-3">
-                                    <span class="badge rounded-pill p-2">Seguridad de Red</span>
-                                    <span class="badge rounded-pill p-2">Admin. de Sistemas</span>
-                                    <span class="badge rounded-pill p-2">Fortinet</span>
-                                </div>
-                                <button class="btn btn-secondary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal" data-project-id="2">Ver Caso de Estudio</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card h-100 shadow-sm project-card">
-                             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" class="card-img-top" alt="Gráficos de datos en una pantalla de laptop">
-                            <div class="card-body d-flex flex-column">
-                                <h3 class="h5 card-title">Dashboard de BI para Optimización de Ventas</h3>
-                                <p class="card-text fw-bold text-success">Automatización de tareas y visibilidad en tiempo real del rendimiento.</p>
-                                <div class="project-tags mb-3">
-                                    <span class="badge rounded-pill p-2">Análisis de Datos</span>
-                                    <span class="badge rounded-pill p-2">Business Intelligence</span>
-                                    <span class="badge rounded-pill p-2">Excel Avanzado</span>
-                                </div>
-                               <button class="btn btn-secondary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal" data-project-id="3">Ver Caso de Estudio</button>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="col-lg-4 col-md-6"><div class="card h-100 shadow-sm project-card"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop" class="card-img-top" alt="Almacén con estanterías"><div class="card-body d-flex flex-column"><h3 class="h5 card-title">Transformación Digital de la Gestión de Inventario</h3><p class="card-text fw-bold text-success">Reducción del 50% en tiempo de gestión y eliminación del 100% de pérdidas.</p><div class="project-tags mb-3"><span class="badge rounded-pill p-2">Gestión de Proyectos</span><span class="badge rounded-pill p-2">Análisis de Requerimientos</span><span class="badge rounded-pill p-2">Gestión del Cambio</span></div><button class="btn btn-secondary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal" data-project-id="1">Ver Caso de Estudio</button></div></div></div>
+                    <div class="col-lg-4 col-md-6"><div class="card h-100 shadow-sm project-card"><img src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?q=80&w=1964&auto=format&fit=crop" class="card-img-top" alt="Sala de servidores con luces azules"><div class="card-body d-flex flex-column"><h3 class="h5 card-title">Modernización y Securización de Infraestructura de Red</h3><p class="card-text fw-bold text-success">Incremento radical de la seguridad y centralización de la gestión de usuarios.</p><div class="project-tags mb-3"><span class="badge rounded-pill p-2">Seguridad de Red</span><span class="badge rounded-pill p-2">Admin. de Sistemas</span><span class="badge rounded-pill p-2">Fortinet</span></div><button class="btn btn-secondary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal" data-project-id="2">Ver Caso de Estudio</button></div></div></div>
+                    <div class="col-lg-4 col-md-6"><div class="card h-100 shadow-sm project-card"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" class="card-img-top" alt="Gráficos de datos en una pantalla de laptop"><div class="card-body d-flex flex-column"><h3 class="h5 card-title">Dashboard de BI para Optimización de Ventas</h3><p class="card-text fw-bold text-success">Automatización de tareas y visibilidad en tiempo real del rendimiento.</p><div class="project-tags mb-3"><span class="badge rounded-pill p-2">Análisis de Datos</span><span class="badge rounded-pill p-2">Business Intelligence</span><span class="badge rounded-pill p-2">Excel Avanzado</span></div><button class="btn btn-secondary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal" data-project-id="3">Ver Caso de Estudio</button></div></div></div>
                 </div>
             </div>
         </section>
@@ -327,24 +317,8 @@
             <div class="container">
                 <h2 class="section-title text-center mb-5 display-5">Mi Trayectoria Trailblazer</h2>
                 <div class="row justify-content-center g-5 mb-5">
-                    <div class="col-lg-5 col-md-6">
-                        <div class="trailblazer-achievement">
-                            <img src="https://i.imgur.com/DC5CHpB.png" alt="Insignia de Salesforce Ranger">
-                            <div>
-                                <h4>Salesforce Ranger</h4>
-                                <p class="text-muted">Un logro que representa un compromiso profundo y un conocimiento extenso del ecosistema Salesforce.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-6">
-                        <div class="trailblazer-achievement">
-                            <img src="https://i.imgur.com/9MD6zO7.png" alt="Insignia Agentblazer Innovator">
-                            <div>
-                                <h4>Agentblazer Innovator</h4>
-                                <p class="text-muted">Reconocimiento a la combinación estratégica de fundamentos de Service Cloud con las innovaciones de IA más demandadas.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="col-lg-5 col-md-6"><div class="trailblazer-achievement"><img src="https://i.imgur.com/DC5CHpB.png" alt="Insignia de Salesforce Ranger"><div><h4>Salesforce Ranger</h4><p class="text-muted">Un logro que representa un compromiso profundo y un conocimiento extenso del ecosistema Salesforce.</p></div></div></div>
+                    <div class="col-lg-5 col-md-6"><div class="trailblazer-achievement"><img src="https://i.imgur.com/9MD6zO7.png" alt="Insignia Agentblazer Innovator"><div><h4>Agentblazer Innovator</h4><p class="text-muted">Reconocimiento a la combinación estratégica de fundamentos de Service Cloud con las innovaciones de IA más demandadas.</p></div></div></div>
                 </div>
                 <div class="row g-4 justify-content-center">
                     <div class="col-lg-2 col-md-3 col-6"><div class="stat-card"><div class="stat-number">119</div><div class="stat-label">Insignias</div></div></div>
@@ -362,9 +336,7 @@
         <section id="approach">
             <div class="terminal-window">
                 <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <span class="term-btn close"></span><span class="term-btn min"></span><span class="term-btn max"></span>
-                    </div>
+                    <div class="terminal-buttons"><span class="term-btn close"></span><span class="term-btn min"></span><span class="term-btn max"></span></div>
                     <div class="terminal-title">¿Y quién es Luis Antonio?</div>
                     <div style="width: 54px;"></div>
                 </div>
@@ -380,22 +352,17 @@
                  <div class="contact-links">
                     <a href="mailto:LuisAntonioJimenez@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Correo" class="mx-3"><i class="fas fa-envelope"></i></a>
                     <a href="https://linkedin.com/in/luisantoniojimenezpernia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="mx-3"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/584127005201?text=Hola%20Luis%20Antonio,%20vi%20tu%20portafolio%20y%20estoy%20interesado/a%20en%20conversar." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="mx-3"><i class="fab fa-whatsapp"></i></a>
                     <a href="https://www.salesforce.com/trailblazer/luisantonio" target="_blank" rel="noopener noreferrer" aria-label="Trailblazer" class="mx-3"><i class="fab fa-salesforce"></i></a>
                 </div>
                 
                 <div class="mt-4">
                     <button class="btn btn-outline-primary" id="contact-form-btn">Enviar un Mensaje Directo</button>
                     <div class="contact-form-wrapper mt-4 text-start" id="contact-form-wrapper">
-                         <form action="https://formspree.io/f/TU_ENDPOINT_DE_FORMSPREE" method="POST" class="contact-form">
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Tu Correo Electrónico</label>
-                                <input type="email" name="email" id="email" class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Mensaje</label>
-                                <textarea name="message" id="message" class="form-control" rows="4" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                         <form id="contact-form" action="https://formspree.io/f/mqalgqyp" method="POST" class="contact-form">
+                            <div class="mb-3"><label for="email" class="form-label">Tu Correo Electrónico</label><input type="email" name="email" id="email" class="form-control" required></div>
+                            <div class="mb-3"><label for="message" class="form-label">Mensaje</label><textarea name="message" id="message" class="form-control" rows="4" required></textarea></div>
+                            <button id="contact-submit-btn" type="submit" class="btn btn-primary">Enviar Mensaje</button>
                         </form>
                     </div>
                 </div>
@@ -404,22 +371,15 @@
     </main>
     
     <footer class="py-4 text-white" style="background-color: var(--dark-bg);">
-         <div class="container text-center">
-            <p class="mb-0">© 2024 Luis Antonio Jiménez. Diseñado con pasión y código.</p>
-        </div>
+         <div class="container text-center"><p class="mb-0">© 2024 Luis Antonio Jiménez. Diseñado con pasión y código.</p></div>
     </footer>
     
     <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5 section-title" id="projectModalLabel">Título del Proyecto</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
+          <div class="modal-header"><h1 class="modal-title fs-5 section-title" id="projectModalLabel">Título del Proyecto</h1><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
           <div class="modal-body" id="projectModalBody"></div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          </div>
+          <div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button></div>
         </div>
       </div>
     </div>
@@ -430,111 +390,13 @@
         document.addEventListener('DOMContentLoaded', function() {
             // --- SCRIPT PRINCIPAL ---
             // ... (código del script principal sin cambios) ...
-            const mainNavbar = document.getElementById('mainNavbar');
-            if (mainNavbar) {
-                const navLinks = mainNavbar.querySelectorAll('.nav-link');
-                const sections = document.querySelectorAll('main section, header');
-                function onScroll() {
-                    if (window.scrollY > 50) {
-                        mainNavbar.classList.add('shadow-sm');
-                    } else {
-                        mainNavbar.classList.remove('shadow-sm');
-                    }
-                    let currentSection = '';
-                    sections.forEach(section => {
-                        const sectionTop = section.offsetTop;
-                        if (window.scrollY >= sectionTop - 72) {
-                            currentSection = section.getAttribute('id');
-                        }
-                    });
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if(link.getAttribute('href') === `#${currentSection}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-                window.addEventListener('scroll', onScroll);
-                onScroll();
-            }
-            
-            const testimonialsData = [
-                { quote: "Como líder de área, el enfoque estratégico de Luis Antonio fue clave para el éxito de varios proyectos. Desarrolló métodos innovadores que mejoraron significativamente la eficiencia de nuestro equipo.", author: "— Jorgeelías Mendez, Gerente de RRHH en Servicios CASMEN, C.A.", skills: ['pm', 'strategy', 'dev'] },
-                { quote: "Juntos llevamos adelante proyectos clave para lograr una infraestructura más robusta, segura y alineada con el negocio. Luis Antonio tuvo un rol fundamental, aportando una mirada estratégica, resolutiva y siempre enfocada en el largo plazo.", author: "— Jonathan Urbano, Coordinador de Tecnología en Servicios CASMEN", skills: ['pm', 'strategy', 'security', 'dev'] },
-                { quote: "Con un presupuesto limitado, logró crear una solución de BI que revolucionó nuestro negocio. Su creatividad para maximizar las herramientas existentes superó todas nuestras expectativas.", author: "— David Ginard, CEO Pholow Mallorca", skills: ['bi', 'data', 'dev'] }
-            ];
-            const carousel = document.getElementById('testimonialCarousel');
-            const skillCards = document.querySelectorAll('.skill-card-highlight');
-            function highlightSkills(index) {
-                skillCards.forEach(card => card.classList.remove('highlight'));
-                if (testimonialsData[index]) {
-                    const skillsToHighlight = testimonialsData[index].skills;
-                    skillsToHighlight.forEach(skillId => {
-                        const card = document.getElementById(`skill-${skillId}`);
-                        if (card) card.classList.add('highlight');
-                    });
-                }
-            }
-            if (carousel) {
-                const carouselInner = carousel.querySelector('.carousel-inner');
-                carouselInner.innerHTML = ''; 
-                testimonialsData.forEach((testimonial, index) => {
-                    const item = document.createElement('div');
-                    item.className = `carousel-item ${index === 0 ? 'active' : ''}`;
-                    item.innerHTML = `<div class="testimonial-card p-4"><p class="fst-italic h5">${testimonial.quote}</p><cite class="fw-bold text-primary d-block mt-3">${testimonial.author}</cite></div>`;
-                    carouselInner.appendChild(item);
-                });
-                
-                highlightSkills(0);
-                carousel.addEventListener('slide.bs.carousel', event => {
-                    highlightSkills(event.to);
-                });
-            }
-
-            const themeSwitcher = document.getElementById('theme-switcher');
-            const themeIcon = themeSwitcher.querySelector('i');
-            const htmlEl = document.documentElement;
-            const setTheme = (theme) => {
-                htmlEl.setAttribute('data-bs-theme', theme);
-                localStorage.setItem('theme', theme);
-                themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-            };
-            const storedTheme = localStorage.getItem('theme');
-            const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            const currentTheme = storedTheme ? storedTheme : preferredTheme;
-            setTheme(currentTheme);
-            themeSwitcher.addEventListener('click', () => {
-                const newTheme = htmlEl.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
-                setTheme(newTheme);
-            });
-            
-            const contactFormBtn = document.getElementById('contact-form-btn');
-            const contactFormWrapper = document.getElementById('contact-form-wrapper');
-            if(contactFormBtn && contactFormWrapper) {
-                contactFormBtn.addEventListener('click', () => {
-                    contactFormWrapper.classList.toggle('active');
-                });
-            }
-
-            const projectModal = document.getElementById('projectModal');
-            if (projectModal) {
-                projectModal.addEventListener('show.bs.modal', function(event) {
-                    const button = event.relatedTarget;
-                    const projectId = button.getAttribute('data-project-id');
-                    const project = {
-                    '1': {"title":"Transformación Digital de la Gestión de Inventario","problem":"Una empresa de construcción en crecimiento enfrentaba pérdidas de material y gestión ineficiente debido a procesos de inventario completamente manuales.","process":"Lideré un análisis de requerimientos y un estudio de mercado para seleccionar el software (Valery) que mejor se adaptara a sus necesidades y presupuesto. Gestioné el ciclo de vida completo del proyecto, desde la adquisición hasta la implementación, migración de datos y, crucialmente, la capacitación de usuarios.","impact":"<strong>Eliminación del 100%</strong> de las pérdidas de inventario, <strong>reducción del 50%</strong> en el tiempo de gestión y <strong>erradicación total</strong> de las compras de urgencia.","challenge":"El mayor reto fue superar la resistencia al cambio en un entorno no tecnológico. Esto me enseñó el valor de la <strong>comunicación empática</strong> y la <strong>capacitación personalizada</strong> como pilares fundamentales de la gestión del cambio."},
-                    '2': {"title":"Modernización y Securización de Infraestructura de Red","problem":"La red operaba sin un dominio centralizado, creando una vulnerabilidad crítica de seguridad y una gestión de usuarios ineficiente.","process":"Como nuevo Gerente de Tecnología, audité la infraestructura y presenté un caso de negocio a la directiva. Una vez aprobado, diseñé e implementé la nueva arquitectura de red basada en dominio, introduciendo políticas de seguridad y la plataforma Fortinet.","impact":"Incremento radical de la seguridad, gestión centralizada de usuarios y recursos, y optimización de la productividad mediante el control de acceso.","challenge":"El desafío fue doble: por un lado, <strong>traducir el riesgo técnico en un argumento de negocio convincente</strong> para la junta directiva y, por otro, asegurar una ejecución técnica impecable. Aprendí a comunicar de manera ejecutiva y a equilibrar la estrategia con la implementación."},
-                    '3': {"title":"Dashboard de BI para Optimización de Ventas","problem":"Procesos de venta y facturación manuales limitaban la eficiencia y la visibilidad del negocio de un concesionario de telefonía.","process":"Desarrollé una herramienta integral en MS Excel que permitía crear cotizaciones dinámicas, generar reportes automáticos de ventas y emitir facturas estandarizadas.","impact":"Automatización de tareas administrativas, proporcionando al negocio una visibilidad en tiempo real de su rendimiento y mejorando la toma de decisiones estratégicas.","challenge":"El reto fue diseñar una solución potente y escalable dentro de estrictas limitaciones presupuestarias. Aprendí el valor de la <strong>recursividad y la eficiencia</strong>, demostrando que la herramienta \"correcta\" no siempre es la más compleja, sino la que mejor resuelve el problema del cliente."}
-                }[projectId];
-                    projectModal.querySelector('.modal-title').textContent = project.title;
-                    projectModal.querySelector('.modal-body').innerHTML = `<h5 class="fw-bold">El Problema</h5><p>${project.problem}</p><h5 class="fw-bold mt-3">Mi Proceso</h5><p>${project.process}</p><h5 class="fw-bold mt-3">Impacto y Resultados</h5><p>${project.impact}</p><h5 class="fw-bold mt-3">Desafío y Aprendizaje Clave</h5><p>${project.challenge}</p>`;
-                });
-            }
+            const mainNavbar=document.getElementById("mainNavbar");if(mainNavbar){const t=mainNavbar.querySelectorAll(".nav-link"),e=document.querySelectorAll("main section, header");function o(){window.scrollY>50?mainNavbar.classList.add("shadow-sm"):mainNavbar.classList.remove("shadow-sm");let o="";e.forEach(t=>{const e=t.offsetTop;window.scrollY>=e-72&&(o=t.getAttribute("id"))}),t.forEach(t=>{t.classList.remove("active"),t.getAttribute("href")===`#${o}`&&t.classList.add("active")})}window.addEventListener("scroll",o),o()}const testimonialsData=[{quote:"Como líder de área, el enfoque estratégico de Luis Antonio fue clave para el éxito de varios proyectos. Desarrolló métodos innovadores que mejoraron significativamente la eficiencia de nuestro equipo.",author:"— Jorgeelías Mendez, Gerente de RRHH en Servicios CASMEN, C.A.",skills:["pm","strategy","dev"]},{quote:"Juntos llevamos adelante proyectos clave para lograr una infraestructura más robusta, segura y alineada con el negocio. Luis Antonio tuvo un rol fundamental, aportando una mirada estratégica, resolutiva y siempre enfocada en el largo plazo.",author:"— Jonathan Urbano, Coordinador de Tecnología en Servicios CASMEN",skills:["pm","strategy","security","dev"]},{quote:"Con un presupuesto limitado, logró crear una solución de BI que revolucionó nuestro negocio. Su creatividad para maximizar las herramientas existentes superó todas nuestras expectativas.",author:"— David Ginard, CEO Pholow Mallorca",skills:["bi","data","dev"]}],carousel=document.getElementById("testimonialCarousel"),skillCards=document.querySelectorAll(".skill-card-highlight");function highlightSkills(t){skillCards.forEach(t=>t.classList.remove("highlight"));if(testimonialsData[t]){const e=testimonialsData[t].skills;e.forEach(t=>{const e=document.getElementById(`skill-${t}`);e&&e.classList.add("highlight")})}}if(carousel){const t=carousel.querySelector(".carousel-inner");t.innerHTML="",testimonialsData.forEach((e,o)=>{const s=document.createElement("div");s.className=`carousel-item ${0===o?"active":""}`,s.innerHTML=`<div class="testimonial-card p-4"><p class="fst-italic h5">${e.quote}</p><cite class="fw-bold text-primary d-block mt-3">${e.author}</cite></div>`,t.appendChild(s)}),highlightSkills(0),carousel.addEventListener("slide.bs.carousel",t=>{highlightSkills(t.to)})}const themeSwitcher=document.getElementById("theme-switcher"),themeIcon=themeSwitcher.querySelector("i"),htmlEl=document.documentElement,setTheme=t=>{htmlEl.setAttribute("data-bs-theme",t),localStorage.setItem("theme",t),themeIcon.className="dark"===t?"fas fa-sun":"fas fa-moon"},storedTheme=localStorage.getItem("theme"),preferredTheme=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light",currentTheme=storedTheme||preferredTheme;setTheme(currentTheme),themeSwitcher.addEventListener("click",()=>{const t="dark"===htmlEl.getAttribute("data-bs-theme")?"light":"dark";setTheme(t)});const contactFormBtn=document.getElementById("contact-form-btn"),contactFormWrapper=document.getElementById("contact-form-wrapper");contactFormBtn&&contactFormWrapper&&contactFormBtn.addEventListener("click",()=>{contactFormWrapper.classList.toggle("active")});const projectModal=document.getElementById("projectModal");projectModal&&projectModal.addEventListener("show.bs.modal",function(t){const e=t.relatedTarget,o=e.getAttribute("data-project-id"),s={"1":{title:"Transformación Digital de la Gestión de Inventario",problem:"Una empresa de construcción en crecimiento enfrentaba pérdidas de material y gestión ineficiente debido a procesos de inventario completamente manuales.",process:'Lideré un análisis de requerimientos y un estudio de mercado para seleccionar el software (Valery) que mejor se adaptara a sus necesidades y presupuesto. Gestioné el ciclo de vida completo del proyecto, desde la adquisición hasta la implementación, migración de datos y, crucialmente, la capacitación de usuarios.',impact:"<strong>Eliminación del 100%</strong> de las pérdidas de inventario, <strong>reducción del 50%</strong> en el tiempo de gestión y <strong>erradicación total</strong> de las compras de urgencia.",challenge:"El mayor reto fue superar la resistencia al cambio en un entorno no tecnológico. Esto me enseñó el valor de la <strong>comunicación empática</strong> y la <strong>capacitación personalizada</strong> como pilares fundamentales de la gestión del cambio."},"2":{title:"Modernización y Securización de Infraestructura de Red",problem:"La red operaba sin un dominio centralizado, creando una vulnerabilidad crítica de seguridad y una gestión de usuarios ineficiente.",process:"Como nuevo Gerente de Tecnología, audité la infraestructura y presenté un caso de negocio a la directiva. Una vez aprobado, diseñé e implementé la nueva arquitectura de red basada en dominio, introduciendo políticas de seguridad y la plataforma Fortinet.",impact:"Incremento radical de la seguridad, gestión centralizada de usuarios y recursos, y optimización de la productividad mediante el control de acceso.",challenge:"El desafío fue doble: por un lado, <strong>traducir el riesgo técnico en un argumento de negocio convincente</strong> para la junta directiva y, por otro, asegurar una ejecución técnica impecable. Aprendí a comunicar de manera ejecutiva y a equilibrar la estrategia con la implementación."},"3":{title:"Dashboard de BI para Optimización de Ventas",problem:"Procesos de venta y facturación manuales limitaban la eficiencia y la visibilidad del negocio de un concesionario de telefonía.",process:"Desarrollé una herramienta integral en MS Excel que permitía crear cotizaciones dinámicas, generar reportes automáticos de ventas y emitir facturas estandarizadas.",impact:"Automatización de tareas administrativas, proporcionando al negocio una visibilidad en tiempo real de su rendimiento y mejorando la toma de decisiones estratégicas.",challenge:'El reto fue diseñar una solución potente y escalable dentro de estrictas limitaciones presupuestarias. Aprendí el valor de la <strong>recursividad y la eficiencia</strong>, demostrando que la herramienta "correcta" no siempre es la más compleja, sino la que mejor resuelve el problema del cliente.'}}[o];projectModal.querySelector(".modal-title").textContent=s.title,projectModal.querySelector(".modal-body").innerHTML=`<h5 class="fw-bold">El Problema</h5><p>${s.problem}</p><h5 class="fw-bold mt-3">Mi Proceso</h5><p>${s.process}</p><h5 class="fw-bold mt-3">Impacto y Resultados</h5><p>${s.impact}</p><h5 class="fw-bold mt-3">Desafío y Aprendizaje Clave</h5><p>${s.challenge}</p>`});
         });
     </script>
     
     <script>
         // --- SCRIPT PARA LA SECCIÓN INTERACTIVA ---
+        // ... (código de la sección interactiva sin cambios) ...
         document.addEventListener('DOMContentLoaded', function () {
             const terminalBody = document.getElementById('terminal-body');
             if (!terminalBody) return;
@@ -571,7 +433,6 @@
                 let tempDiv = document.createElement('div');
                 tempDiv.innerHTML = htmlContent;
                 const textContent = tempDiv.textContent || '';
-                
                 let i = 0;
                 function type() {
                     if (i < textContent.length) {
@@ -593,7 +454,6 @@
                     helpText.classList.remove('visible');
                     return;
                 }
-
                 isWaitingForInput = false;
                 helpText.classList.remove('visible');
                 const step = steps[currentStepIndex];
@@ -625,10 +485,8 @@
                 terminalBody.scrollTop = terminalBody.scrollHeight;
             }
 
-            // MODIFICADO: Lógica de Interacción Unificada
             function handleInteraction(e) {
                 if (!isWaitingForInput) return;
-
                 const step = steps[currentStepIndex];
                 let actionKey = null;
 
@@ -644,7 +502,6 @@
 
                 const lastLine = terminalBody.querySelector('.terminal-line:last-child');
                 lastLine.innerHTML = lastLine.innerHTML.replace(cursorSpan, ''); 
-
                 let nextStepId = null;
 
                 if (step.waitFor === 'YN') {
@@ -675,5 +532,61 @@
             terminalBody.addEventListener('click', handleInteraction);
         });
     </script>
+    <script>
+        // --- SCRIPT PARA ENVÍO DE FORMULARIO AJAX ---
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const form = e.target;
+                const data = new FormData(form);
+                const submitButton = document.getElementById('contact-submit-btn');
+                const originalButtonText = submitButton.textContent;
+
+                submitButton.disabled = true;
+                submitButton.textContent = 'Enviando...';
+
+                fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        submitButton.textContent = '¡Mensaje Enviado!';
+                        form.reset();
+                        setTimeout(() => {
+                            document.getElementById('contact-form-wrapper').classList.remove('active');
+                            submitButton.textContent = originalButtonText;
+                            submitButton.disabled = false;
+                        }, 4000);
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                               alert(data["errors"].map(error => error["message"]).join(", "));
+                            } else {
+                               submitButton.textContent = 'Error al Enviar';
+                            }
+                        })
+                    }
+                }).catch(error => {
+                    submitButton.textContent = 'Error. Intenta de nuevo.';
+                }).finally(() => {
+                    if(submitButton.textContent !== '¡Mensaje Enviado!') {
+                        setTimeout(() => {
+                            submitButton.textContent = originalButtonText;
+                            submitButton.disabled = false;
+                        }, 2000);
+                    }
+                });
+            });
+        }
+    </script>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/584127005201?text=Hola%20Luis%20Antonio,%20vi%20tu%20portafolio%20y%20estoy%20interesado/a%20en%20conversar." target="_blank" rel="noopener noreferrer" class="whatsapp-flotante" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>
