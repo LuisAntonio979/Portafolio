@@ -94,7 +94,7 @@
         .testimonial-carousel-wrapper .carousel-control-next { right: -60px; }
         .testimonial-carousel-wrapper .carousel-control-prev:hover, 
         .testimonial-carousel-wrapper .carousel-control-next:hover { opacity: 1; }
-        .carousel-control-prev-icon, .carousel-control-next-icon { filter: invert(var(--bs-body-color-rgb), 0)); }
+        .carousel-control-prev-icon, .carousel-control-next-icon { filter: invert(var(--bs-body-color-rgb, 0)); }
         [data-bs-theme="dark"] .carousel-control-prev-icon, [data-bs-theme="dark"] .carousel-control-next-icon { filter: invert(1); }
         @media (max-width: 992px) {
             .testimonial-carousel-wrapper .carousel-control-prev, 
@@ -153,7 +153,7 @@
         .close { background-color: #ff5f56; } .min { background-color: #ffbd2e; } .max { background-color: #27c93f; }
         .terminal-title {
             color: var(--terminal-header-text); font-family: 'Montserrat', sans-serif; font-weight: 700;
-            transition: color 0.3s ease; font-size: 1.5rem; /* MODIFICADO */
+            transition: color 0.3s ease; font-size: 1.5rem;
             flex-grow: 1; text-align: center;
         }
         .terminal-body {
@@ -169,6 +169,18 @@
         .special-boolean { color: var(--terminal-special-boolean-color); }
         .user-choice { font-weight: bold; }
         .emoji { opacity: 0.7; }
+        
+        /* MODIFICADO: Estilos para botones interactivos */
+        .user-choice-button {
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s ease;
+        }
+        .user-choice-button:hover {
+            color: var(--terminal-string-color);
+        }
 
         .cursor {
             display: inline-block; width: 8px; height: 1rem;
@@ -176,7 +188,7 @@
         }
         @keyframes blink { 50% { opacity: 0; } }
 
-        .signature-img { /* MODIFICADO Y CORREGIDO */
+        .signature-img {
             max-width: 250px;
             margin-top: 1rem;
             filter: brightness(0) invert(1);
@@ -417,6 +429,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // --- SCRIPT PRINCIPAL ---
+            // ... (código del script principal sin cambios) ...
             const mainNavbar = document.getElementById('mainNavbar');
             if (mainNavbar) {
                 const navLinks = mainNavbar.querySelectorAll('.nav-link');
@@ -532,7 +545,7 @@
             const cursorSpan = '<span class="cursor"></span>';
 
             const steps = [
-                { type: 'prompt', text: '¿Lo averiguamos? <span class="user-choice">[Y/N]</span>', waitFor: 'YN', yesAction: 'start_profile', noAction: 'no_1' },
+                { type: 'prompt', text: '¿Lo averiguamos? <span class="user-choice-button" data-key="y">[Y]</span><span class="user-choice-button" data-key="n">[N]</span>', waitFor: 'YN', yesAction: 'start_profile', noAction: 'no_1' },
                 { type: 'response', id: 'no_1', text: '<span class="prompt">&gt;&gt;&gt; </span><span class="comment">Entendido. Ejecutando de todas formas... el perfil es demasiado interesante para omitirlo. ;)</span>', next: 'start_profile' },
                 { type: 'typewriter', id: 'start_profile', text: '<span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import </span><span class="variable">luis_antonio</span>\n<span class="prompt">&gt;&gt;&gt; </span><span class="keyword">help</span>(<span class="variable">luis_antonio</span>.<span class="function">get_profile</span>)\n<span class="comment"># Ejecutando introspección del perfil...</span>\n\n<span class="keyword">def </span><span class="function">get_profile</span>():' },
                 { type: 'typewriter', text: '    <span class="string">"""\n    Ok, llegamos a la parte personal! Soy "Arquitecto de Soluciones" porque me veo\n    como un constructor de puentes, buscando llenar el vacío que hay entre una\n    idea y el código, entre los datos y una decisión de negocio o entre una\n    necesidad y su solución.\n    """</span>' },
@@ -545,15 +558,13 @@
                 { type: 'typewriter', text: '<span class="prompt">&gt;&gt;&gt; </span><span class="string">"Lo mismo podemos debatir horas sobre los Imperios Romano u Otomano; que conversar\nacerca de si AuronPlay estará o no en la próxima Velada de Año.\nY no te extrañes si algún día me encuentras escuchando en Spotify una playlist\nde música muy vieja, mientras investigo la Teoría de Cuerdas o acerca de IA\ny Mecánica Cuántica."</span>' },
                 { type: 'prompt', text: '<span class="prompt">&gt;&gt;&gt; </span>Y en cuanto a mis gustos... <span class="comment">[Presiona para continuar]</span>', waitFor: 'ANY' },
                 { type: 'typewriter', text: '<span class="prompt">&gt;&gt;&gt; </span><span class="string">"A ver, en este punto debo ser Claro y Contundente."</span>\n<span class="string">"Sin importar cuántas realidades postule la Ecuación de Schrödinger:"</span>\n<span class="string">"<strong class="special-boolean">\'En esta y en todas las dimensiones y líneas temporales posibles, soy fanático</strong></span>\n<span class="string"><strong class="special-boolean">\'de Los Gloriosos Leones del Caracas; y en todo ese Multiverso, la mejor banda de Rock de La</strong></span>\n<span class="string"><strong class="special-boolean">\'Historia son Los Beatles.\'</strong>"</span>\n\n<span class="string">"¡Esto ya fue demostrado... Por mí mismo! <span class=\'emoji\'>😎</span>"</span>' },
-                { type: 'prompt', text: '<span class="prompt">&gt;&gt;&gt; </span>Supongo que estás de acuerdo conmigo, ¿verdad? <span class="user-choice">[Y/N]</span>', waitFor: 'YN', yesAction: 'final_words', noAction: 'no_2' },
+                { type: 'prompt', text: '<span class="prompt">&gt;&gt;&gt; </span>Supongo que estás de acuerdo conmigo, ¿verdad? <span class="user-choice-button" data-key="y">[Y]</span><span class="user-choice-button" data-key="n">[N]</span>', waitFor: 'YN', yesAction: 'final_words', noAction: 'no_2' },
                 { type: 'response', id: 'no_2', text: '<span class="prompt">&gt;&gt;&gt; </span><span class="comment"># Anotado. El debate queda pendiente para el café de la entrevista.</span>', next: 'final_words'},
                 { type: 'typewriter', id: 'final_words', text: '<span class="prompt">&gt;&gt;&gt; </span><em><span class="string">"Y creo que eso es todo... O una parte del todo."</span>\n<span class="string">"En definitiva, soy un tipo normal que procura usar sus virtudes para aprender de\nsus defectos, intentando ser hoy una versión mejorada del Hijo, del Hermano,\ndel Esposo y del Padre que fuí ayer."</span></em>' },
                 { type: 'response', text: '<span class="comment"># Renderizando firma...</span>' },
                 { type: 'response', text: '<img src="https://i.imgur.com/WET3QcD.png" alt="Firma" class="signature-img">' },
                 { type: 'response', text: '<span class="prompt">&gt;&gt;&gt; </span><span class="cursor"></span>' }
             ];
-
-            let keydownListener = null;
 
             function typewriter(element, htmlContent, onComplete) {
                 element.innerHTML = '';
@@ -614,25 +625,39 @@
                 terminalBody.scrollTop = terminalBody.scrollHeight;
             }
 
-            function handleKeyPress(e) {
+            // MODIFICADO: Lógica de Interacción Unificada
+            function handleInteraction(e) {
                 if (!isWaitingForInput) return;
 
                 const step = steps[currentStepIndex];
+                let actionKey = null;
+
+                if (e.type === 'click' && e.target.classList.contains('user-choice-button')) {
+                    actionKey = e.target.dataset.key;
+                } else if (e.type === 'keydown') {
+                    actionKey = e.key.toLowerCase();
+                } else if (e.type === 'click' && step.waitFor === 'ANY') {
+                    actionKey = 'any';
+                } else {
+                    return;
+                }
+
                 const lastLine = terminalBody.querySelector('.terminal-line:last-child');
                 lastLine.innerHTML = lastLine.innerHTML.replace(cursorSpan, ''); 
 
                 let nextStepId = null;
 
                 if (step.waitFor === 'YN') {
-                    const key = e.key.toLowerCase();
-                    if (key === 'y') {
-                        lastLine.innerHTML += 'Y';
+                    if (actionKey === 'y') {
+                        lastLine.innerHTML = lastLine.innerHTML.replace(/\[Y\]\[N\]/g, '[Y]');
                         nextStepId = step.yesAction;
-                    } else { 
-                        lastLine.innerHTML += (key === 'n' ? 'N' : '...');
+                    } else if (actionKey === 'n') {
+                        lastLine.innerHTML = lastLine.innerHTML.replace(/\[Y\]\[N\]/g, '[N]');
                         nextStepId = step.noAction;
+                    } else {
+                        return;
                     }
-                } else {
+                } else { // waitFor === 'ANY'
                     currentStepIndex++;
                 }
 
@@ -642,16 +667,12 @@
                 }
                 
                 isWaitingForInput = false;
-                document.removeEventListener('keydown', handleKeyPress);
-                setTimeout(() => {
-                    processStep();
-                    document.addEventListener('keydown', handleKeyPress);
-                }, 300);
+                setTimeout(processStep, 300);
             }
             
-            keydownListener = handleKeyPress;
             processStep();
-            document.addEventListener('keydown', handleKeyPress);
+            document.addEventListener('keydown', handleInteraction);
+            terminalBody.addEventListener('click', handleInteraction);
         });
     </script>
 </body>
