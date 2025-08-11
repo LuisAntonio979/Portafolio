@@ -15,6 +15,21 @@
     <meta property="og:image" content="img/FotoPerfil-1.png">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:image" content="img/FotoPerfil-1.png">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Luis Antonio Jiménez",
+      "url": "https://luisantonio.com.ve",
+      "jobTitle": "Arquitecto de Soluciones Tecnológicas",
+      "sameAs": [
+        "https://linkedin.com/in/luisantoniojimenezpernia",
+        "https://www.salesforce.com/trailblazer/luisantonio"
+      ]
+    }
+    </script>
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F7KLD4BXQW"></script>
@@ -402,6 +417,7 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // --- GENERAL SCRIPTS ---
             const mainNavbar = document.getElementById('mainNavbar');
             if (mainNavbar) {
                 const navLinks = mainNavbar.querySelectorAll('.nav-link');
@@ -487,6 +503,17 @@
                     contactFormWrapper.classList.toggle('active');
                 });
             }
+            
+            // --- GA4 EVENT: click_external_link ---
+            const externalLinks = document.querySelectorAll('a[target="_blank"]');
+            externalLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    gtag('event', 'click_external_link', {
+                        'link_url': link.href,
+                        'link_text': link.textContent.trim() || link.getAttribute('aria-label')
+                    });
+                });
+            });
 
             const projectModal = document.getElementById('projectModal');
             if (projectModal) {
@@ -500,6 +527,11 @@
                 }[projectId];
                     projectModal.querySelector('.modal-title').textContent = project.title;
                     projectModal.querySelector('.modal-body').innerHTML = `<h5 class="fw-bold">El Problema</h5><p>${project.problem}</p><h5 class="fw-bold mt-3">Mi Proceso</h5><p>${project.process}</p><h5 class="fw-bold mt-3">Impacto y Resultados</h5><p>${project.impact}</p><h5 class="fw-bold mt-3">Desafío y Aprendizaje Clave</h5><p>${project.challenge}</p>`;
+
+                    // --- GA4 EVENT: view_case_study ---
+                    gtag('event', 'view_case_study', {
+                        'project_title': project.title
+                    });
                 });
             }
         });
@@ -564,6 +596,15 @@
                     helpText.classList.remove('visible');
                     return;
                 }
+                
+                if(currentStepIndex === steps.length - 1) {
+                    // --- GA4 EVENT: complete_terminal_story ---
+                    gtag('event', 'complete_terminal_story', {
+                        'event_category': 'engagement',
+                        'event_label': 'User reached the end of the interactive terminal story.'
+                    });
+                }
+                
                 isWaitingForInput = false;
                 helpText.classList.remove('visible');
                 const step = steps[currentStepIndex];
@@ -664,6 +705,11 @@
                     }
                 }).then(response => {
                     if (response.ok) {
+                        // --- GA4 EVENT: generate_lead ---
+                        gtag('event', 'generate_lead', {
+                            'event_category': 'contact',
+                            'event_label': 'Contact form successfully submitted.'
+                        });
                         submitButton.textContent = '¡Mensaje Enviado!';
                         form.reset();
                         setTimeout(() => {
