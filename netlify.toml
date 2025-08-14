@@ -6,3 +6,11 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=()"
+    # Regla de Redirección para el subdominio de la oferta
+[[redirects]]
+  from = "/*"
+  to = "/oferta.html"
+  status = 200
+  force = true
+  [redirects.conditions]
+    Host = "oferta.luisantonio.com.ve"
