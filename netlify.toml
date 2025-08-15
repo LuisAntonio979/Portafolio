@@ -6,9 +6,17 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=()"
-# Regla de Redirección para el subdominio de la oferta (versión explícita)
+
+# Regla de Redirección para el subdominio de la oferta venezolana (versión explícita)
 [[redirects]]
   from = "https://oferta.luisantonio.com.ve/*"
   to = "/oferta.html"
+  status = 200
+  force = true
+
+# Regla de Redirección para el subdominio de la oferta española (versión explícita)
+[[redirects]]
+  from = "https://granoferta.luisantonio.com.ve/*"
+  to = "/granoferta.html"
   status = 200
   force = true
