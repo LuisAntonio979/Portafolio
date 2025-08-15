@@ -45,7 +45,7 @@
         .package-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
         .package-card.recommended { border: 2px solid var(--primary-color); }
         .recommended-badge { background-color: var(--primary-color); color: white; font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.7rem; border-radius: 50rem; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); }
-        .package-price { font-size: 2.75rem; }
+        .package-price { font-size: 2.75rem; position: relative; top: -10px; }
         .original-price { text-decoration: line-through; color: var(--subtle-text-color); font-size: 1.5rem; font-weight: 400; }
         .package-objective { min-height: 8.5rem; font-size: 0.9rem; padding-left: 1rem; padding-right: 1rem;}
         .package-objective p { margin-bottom: 0.75rem; }
@@ -76,6 +76,30 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             color: var(--primary-color);
+        }
+        
+        /* --- NUEVO: ANIMACIÓN DE PULSO --- */
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 119, 182, 0.4); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(0, 119, 182, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 119, 182, 0); }
+        }
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .cta-buttons-container {
+            display: grid;
+            gap: 1rem;
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+        @media (min-width: 576px) {
+            .cta-buttons-container {
+                grid-template-columns: 1fr 1fr;
+                max-width: 600px;
+            }
         }
 
         .footer { background: var(--dark-bg); color: var(--background-color); padding: 3rem 0 2rem; }
@@ -129,54 +153,9 @@
                     <p class="lead col-lg-8 mx-auto mb-4">No eliges un producto, eliges una misión. ¿Cuál es tu siguiente objetivo de negocio?</p>
                 </div>
                 <div class="row mt-4 g-4 justify-content-center">
-
-                    <!-- Paquete 1: Esencial -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="package-card d-flex flex-column text-center bg-white">
-                            <div class="card-header bg-transparent border-bottom-0 py-4">
-                                <h3 class="package-name">Presencia Esencial</h3>
-                                <div class="package-objective text-muted"><p><strong>Construye credibilidad inmediata con una presencia online profesional.</strong></p><p class="fw-normal fst-italic">Ideal para profesionales, startups y negocios que necesitan validar su idea con una presencia online impecable y rápida.</p></div>
-                            </div>
-                            <div class="card-body p-4 pt-0">
-                                <div class="original-price"><s>150 €</s></div>
-                                <h2 class="package-price my-2">90<span class="fs-6 text-muted"> €</span></h2>
-                                <ul class="feature-list list-unstyled text-start"><li class="value-header placeholder">Placeholder</li><li><i class="fas fa-check-circle text-success me-2"></i>Landing Page Profesional</li><li><i class="fas fa-check-circle text-success me-2"></i>Diseño 100% Responsivo</li><li><i class="fas fa-check-circle text-success me-2"></i>Formulario de Contacto Funcional</li><li><i class="fas fa-check-circle text-success me-2"></i>SEO Técnico Básico</li><li><i class="fas fa-check-circle text-success me-2"></i>Paleta de Colores y Tipografía de Marca</li><li><i class="fas fa-check-circle text-success me-2"></i>Despliegue y Puesta en Marcha</li></ul>
-                            </div>
-                            <div class="card-footer bg-transparent border-0 p-4 pt-2"><a href="#cta-final" class="btn btn-outline-primary w-100">Iniciar mi Presencia</a></div>
-                        </div>
-                    </div>
-
-                    <!-- Paquete 2: Impacto (Recomendado) -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="package-card recommended bg-primary-subtle d-flex flex-column text-center position-relative">
-                            <div class="recommended-badge">RECOMENDADO</div>
-                            <div class="card-header bg-transparent border-bottom-0 py-4">
-                                <h3 class="package-name">Impacto y Crecimiento</h3>
-                                <div class="package-objective text-muted"><p><strong>Diferénciate del mercado y transforma visitantes en clientes potenciales.</strong></p><p class="fw-normal fst-italic">Recomendado para PYMES y profesionales listos para diferenciar su marca y convertir su web en un verdadero canal de captación.</p></div>
-                            </div>
-                            <div class="card-body p-4 pt-0">
-                                <div class="original-price"><s>350 €</s></div>
-                                <h2 class="package-price my-2">210<span class="fs-6 text-muted"> €</span></h2>
-                                <ul class="feature-list list-unstyled text-start"><li class="value-header">Todo lo incluido en "Presencia Esencial", y además:</li><li><i class="fas fa-check-circle text-success me-2"></i>Sitio Web Corporativo</li><li><i class="fas fa-check-circle text-success me-2"></i>Ecosistema Interactivo de Valor</li><li><i class="fas fa-check-circle text-success me-2"></i>SEO Técnico Estándar</li><li><i class="fas fa-check-circle text-success me-2"></i>Google Analytics 4</li><li><i class="fas fa-check-circle text-success me-2"></i>Integración con Redes Sociales</li></ul>
-                            </div>
-                            <div class="card-footer bg-transparent border-0 p-4 pt-2"><a href="#cta-final" class="btn btn-primary w-100">Diferenciar mi Negocio</a></div>
-                        </div>
-                    </div>
-
-                    <!-- Paquete 3: Alianza -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="package-card bg-dark text-white d-flex flex-column text-center">
-                            <div class="card-header bg-transparent border-bottom-0 py-4">
-                                <h3 class="package-name">Alianza Estratégica</h3>
-                                <div class="package-objective text-white-50"><p><strong>Lidera el mercado con una plataforma superior en tecnología y datos.</strong></p><p class="fw-normal fst-italic">Diseñado para empresas y líderes que exigen una solución digital superior para consolidar su autoridad y potenciar un crecimiento sostenido.</p></div>
-                            </div>
-                            <div class="card-body p-4 pt-0">
-                                <div class="original-price"><s>550 €</s></div>
-                                <h2 class="package-price my-2">330<span class="fs-6 text-white-50"> €</span></h2>
-                                <ul class="feature-list list-unstyled text-start"><li class="value-header">Todo lo incluido en "Impacto y Crecimiento", y además:</li><li><i class="fas fa-check-circle text-success me-2"></i>Portal a medida + Consultoría Estratégica</li><li><i class="fas fa-check-circle text-success me-2"></i>Ecosistema Interactivo Premium</li><li><i class="fas fa-check-circle text-success me-2"></i>SEO, Seguridad Avanzada</li><li><i class="fas fa-check-circle text-success me-2"></i>Analítica de Conversión Avanzada</li><li><i class="fas fa-check-circle text-success me-2"></i>Política de Privacidad Personalizada</li><li><i class="fas fa-check-circle text-success me-2"></i>Dominio Incluido (1er Año)</li></ul></div>
-                            <div class="card-footer bg-transparent border-0 p-4 pt-2"><a href="#cta-final" class="btn btn-outline-light w-100">Dominar mi Mercado</a></div>
-                        </div>
-                    </div>
+                    <div class="col-lg-4 col-md-6"><div class="package-card d-flex flex-column text-center bg-white"><div class="card-header bg-transparent border-bottom-0 py-4"><h3 class="package-name">Presencia Esencial</h3><div class="package-objective text-muted"><p><strong>Construye credibilidad inmediata con una presencia online profesional.</strong></p><p class="fw-normal fst-italic">Ideal para profesionales, startups y negocios que necesitan validar su idea con una presencia online impecable y rápida.</p></div></div><div class="card-body p-4 pt-0"><div class="original-price"><s>150 €</s></div><h2 class="package-price my-2">90<span class="fs-3 text-muted"> €</span></h2><ul class="feature-list list-unstyled text-start"><li class="value-header placeholder">Placeholder</li><li><i class="fas fa-check-circle text-success me-2"></i>Landing Page Profesional</li><li><i class="fas fa-check-circle text-success me-2"></i>Diseño 100% Responsivo</li><li><i class="fas fa-check-circle text-success me-2"></i>Formulario de Contacto Funcional</li><li><i class="fas fa-check-circle text-success me-2"></i>SEO Técnico Básico</li><li><i class="fas fa-check-circle text-success me-2"></i>Paleta de Colores y Tipografía de Marca</li><li><i class="fas fa-check-circle text-success me-2"></i>Despliegue y Puesta en Marcha</li></ul></div><div class="card-footer bg-transparent border-0 p-4 pt-2"><a href="#cta-final" class="btn btn-outline-primary w-100">Iniciar mi Presencia</a></div></div></div>
+                    <div class="col-lg-4 col-md-6"><div class="package-card recommended bg-primary-subtle d-flex flex-column text-center position-relative"><div class="recommended-badge">RECOMENDADO</div><div class="card-header bg-transparent border-bottom-0 py-4"><h3 class="package-name">Impacto y Crecimiento</h3><div class="package-objective text-muted"><p><strong>Diferénciate del mercado y transforma visitantes en clientes potenciales.</strong></p><p class="fw-normal fst-italic">Recomendado para PYMES y profesionales listos para diferenciar su marca y convertir su web en un verdadero canal de captación.</p></div></div><div class="card-body p-4 pt-0"><div class="original-price"><s>350 €</s></div><h2 class="package-price my-2">210<span class="fs-3 text-muted"> €</span></h2><ul class="feature-list list-unstyled text-start"><li class="value-header">Todo lo incluido en "Presencia Esencial", y además:</li><li><i class="fas fa-check-circle text-success me-2"></i>Sitio Web Corporativo</li><li><i class="fas fa-check-circle text-success me-2"></i>Ecosistema Interactivo de Valor</li><li><i class="fas fa-check-circle text-success me-2"></i>SEO Técnico Estándar</li><li><i class="fas fa-check-circle text-success me-2"></i>Google Analytics 4</li><li><i class="fas fa-check-circle text-success me-2"></i>Integración con Redes Sociales</li></ul></div><div class="card-footer bg-transparent border-0 p-4 pt-2"><a href="#cta-final" class="btn btn-primary w-100">Diferenciar mi Negocio</a></div></div></div>
+                    <div class="col-lg-4 col-md-6"><div class="package-card bg-dark text-white d-flex flex-column text-center"><div class="card-header bg-transparent border-bottom-0 py-4"><h3 class="package-name">Alianza Estratégica</h3><div class="package-objective text-white-50"><p><strong>Lidera el mercado con una plataforma superior en tecnología y datos.</strong></p><p class="fw-normal fst-italic">Diseñado para empresas y líderes que exigen una solución digital superior para consolidar su autoridad y potenciar un crecimiento sostenido.</p></div></div><div class="card-body p-4 pt-0"><div class="original-price"><s>550 €</s></div><h2 class="package-price my-2">330<span class="fs-3 text-white-50"> €</span></h2><ul class="feature-list list-unstyled text-start"><li class="value-header">Todo lo incluido en "Impacto y Crecimiento", y además:</li><li><i class="fas fa-check-circle text-success me-2"></i>Portal a medida + Consultoría Estratégica</li><li><i class="fas fa-check-circle text-success me-2"></i>Ecosistema Interactivo Premium</li><li><i class="fas fa-check-circle text-success me-2"></i>SEO, Seguridad Avanzada</li><li><i class="fas fa-check-circle text-success me-2"></i>Analítica de Conversión Avanzada</li><li><i class="fas fa-check-circle text-success me-2"></i>Política de Privacidad Personalizada</li><li><i class="fas fa-check-circle text-success me-2"></i>Dominio Incluido (1er Año)</li></ul></div><div class="card-footer bg-transparent border-0 p-4 pt-2"><a href="#cta-final" class="btn btn-outline-light w-100">Dominar mi Mercado</a></div></div></div>
                 </div>
             </div>
         </section>
@@ -201,7 +180,7 @@
                         <span class="fw-bold">Cupos Disponibles:</span>
                         <span class="slots">5 de 5</span>
                     </div>
-                    <a href="#cta-final" class="btn btn-outline-primary">Quiero Ser Socio Fundador</a>
+                    <a href="#cta-final" class="btn btn-outline-primary btn-pulse">Quiero Ser Socio Fundador</a>
                 </div>
             </div>
         </section>
@@ -209,8 +188,12 @@
         <section id="cta-final" class="py-5 text-center">
             <div class="container col-lg-7">
                 <h2 class="text-primary">Comienza tu Transformación Digital en España</h2>
-                <p class="lead mb-4">Tu primer paso es una <strong>sesión de diagnóstico gratuita de 30 minutos</strong> con mi socio estratégico en España, <strong>[Nombre del Asesor]</strong>. En esta llamada, él escuchará tus objetivos para preparar el terreno. El siguiente paso será una <strong>sesión de arquitectura de soluciones</strong> donde <strong>ambos</strong> te presentaremos un plan de acción a medida.</p>
-                <a href="mailto:[Email del Asesor]?subject=Solicitud%20de%20Sesión%20de%20Diagnóstico" class="btn btn-success btn-lg">Agendar Sesión de Diagnóstico</a>
+                <p class="lead mb-4">Tu primer paso es una <strong>sesión de diagnóstico gratuita de 30 minutos</strong> con mi socio estratégico en España, <strong>[Nombre del Asesor]</strong>. En esta llamada, él escuchará tus objetivos para preparar el terreno. El siguiente paso será una <strong>sesión de arquitectura de soluciones</strong> donde <strong>ambos</strong> te presentaremos un plan de acción a tu medida.</p>
+                <p class="mb-4"><strong>Elige tu canal preferido para empezar:</strong></p>
+                <div class="cta-buttons-container">
+                    <a href="mailto:[Email del Asesor]?subject=Solicitud%20de%20Sesión%20de%20Diagnóstico" class="btn btn-success btn-lg"><i class="fas fa-envelope me-2"></i>Agendar por Email</a>
+                    <a href="https://wa.me/[WhatsApp del Asesor]?text=Hola,%20vi%20la%20oferta%20para%20España%20y%20quisiera%20agendar%20mi%20sesión%20de%20diagnóstico." target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-lg"><i class="fab fa-whatsapp me-2"></i>Consultar por WhatsApp</a>
+                </div>
             </div>
         </section>
     </main>
