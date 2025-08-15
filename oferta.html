@@ -85,6 +85,16 @@
         .footer a { color: var(--subtle-text-color); text-decoration: none; transition: color 0.3s ease; }
         .footer a:hover { color: #fff; }
         .footer .copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--subtle-text-color); font-size: 0.9rem; }
+
+                /* --- NUEVO: ANIMACIÓN DE PULSO --- */
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 119, 182, 0.4); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(0, 119, 182, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 119, 182, 0); }
+        }
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
     </style>
 </head>
 <body>
@@ -203,7 +213,7 @@
                         <span class="fw-bold">Cupos Disponibles:</span>
                         <span class="slots">3 de 5</span>
                     </div>
-                    <a href="#cta-final" class="btn btn-outline-primary">Quiero Ser Socio Fundador</a>
+                    <a href="#cta-final" class="btn btn-outline-primary btn-pulse">Quiero Ser Socio Fundador</a>
                 </div>
             </div>
         </section>
