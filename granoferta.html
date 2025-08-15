@@ -45,8 +45,11 @@
         .package-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
         .package-card.recommended { border: 2px solid var(--primary-color); }
         .recommended-badge { background-color: var(--primary-color); color: white; font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.7rem; border-radius: 50rem; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); }
-        .package-price { font-size: 2.75rem; position: relative; top: -10px; }
-        .package-objective { min-height: 6rem; font-size: 0.9rem; } /* Ajustado para el nuevo contenido */
+        .package-price { font-size: 2.75rem; }
+        .original-price { text-decoration: line-through; color: var(--subtle-text-color); font-size: 1.5rem; font-weight: 400; }
+        .package-objective { min-height: 8.5rem; font-size: 0.9rem; padding-left: 1rem; padding-right: 1rem;}
+        .package-objective p { margin-bottom: 0.75rem; }
+        .package-objective p:last-child { margin-bottom: 0; }
         .feature-list { font-size: 0.9rem; }
         .feature-list li.value-header { list-style: none; font-weight: 700; margin-top: 0.5rem; }
         .feature-list li.placeholder { visibility: hidden; list-style: none; font-weight: 700; margin-top: 0.5rem; }
@@ -132,13 +135,11 @@
                         <div class="package-card d-flex flex-column text-center bg-white">
                             <div class="card-header bg-transparent border-bottom-0 py-4">
                                 <h3 class="package-name">Presencia Esencial</h3>
-                                <div class="package-objective text-muted fw-bold">
-                                    <p class="mb-2"><strong>Construye credibilidad inmediata con una presencia online profesional.</strong></p>
-                                    <p class="fw-normal fst-italic">Ideal para profesionales, startups y negocios que necesitan validar su idea con una presencia online impecable y rápida.</p>
-                                </div>
+                                <div class="package-objective text-muted"><p><strong>Construye credibilidad inmediata con una presencia online profesional.</strong></p><p class="fw-normal fst-italic">Ideal para profesionales, startups y negocios que necesitan validar su idea con una presencia online impecable y rápida.</p></div>
                             </div>
                             <div class="card-body p-4 pt-0">
-                                <h2 class="package-price my-2">150<span class="fs-6 text-muted"> €</span></h2>
+                                <div class="original-price"><s>150 €</s></div>
+                                <h2 class="package-price my-2">90<span class="fs-6 text-muted"> €</span></h2>
                                 <ul class="feature-list list-unstyled text-start"><li class="value-header placeholder">Placeholder</li><li><i class="fas fa-check-circle text-success me-2"></i>Landing Page Profesional</li><li><i class="fas fa-check-circle text-success me-2"></i>Diseño 100% Responsivo</li><li><i class="fas fa-check-circle text-success me-2"></i>Formulario de Contacto Funcional</li><li><i class="fas fa-check-circle text-success me-2"></i>SEO Técnico Básico</li><li><i class="fas fa-check-circle text-success me-2"></i>Paleta de Colores y Tipografía de Marca</li><li><i class="fas fa-check-circle text-success me-2"></i>Despliegue y Puesta en Marcha</li></ul>
                             </div>
                             <div class="card-footer bg-transparent border-0 p-4 pt-2"><a href="#cta-final" class="btn btn-outline-primary w-100">Iniciar mi Presencia</a></div>
@@ -151,13 +152,11 @@
                             <div class="recommended-badge">RECOMENDADO</div>
                             <div class="card-header bg-transparent border-bottom-0 py-4">
                                 <h3 class="package-name">Impacto y Crecimiento</h3>
-                                <div class="package-objective text-muted fw-bold">
-                                    <p class="mb-2"><strong>Diferénciate del mercado y transforma visitantes en clientes potenciales.</strong></p>
-                                    <p class="fw-normal fst-italic">Recomendado para PYMES y profesionales establecidos que buscan diferenciarse activamente y transformar su web en un verdadero canal de captación de clientes.</p>
-                                </div>
+                                <div class="package-objective text-muted"><p><strong>Diferénciate del mercado y transforma visitantes en clientes potenciales.</strong></p><p class="fw-normal fst-italic">Recomendado para PYMES y profesionales listos para diferenciar su marca y convertir su web en un verdadero canal de captación.</p></div>
                             </div>
                             <div class="card-body p-4 pt-0">
-                                <h2 class="package-price my-2">350<span class="fs-6 text-muted"> €</span></h2>
+                                <div class="original-price"><s>350 €</s></div>
+                                <h2 class="package-price my-2">210<span class="fs-6 text-muted"> €</span></h2>
                                 <ul class="feature-list list-unstyled text-start"><li class="value-header">Todo lo incluido en "Presencia Esencial", y además:</li><li><i class="fas fa-check-circle text-success me-2"></i>Sitio Web Corporativo</li><li><i class="fas fa-check-circle text-success me-2"></i>Ecosistema Interactivo de Valor</li><li><i class="fas fa-check-circle text-success me-2"></i>SEO Técnico Estándar</li><li><i class="fas fa-check-circle text-success me-2"></i>Google Analytics 4</li><li><i class="fas fa-check-circle text-success me-2"></i>Integración con Redes Sociales</li></ul>
                             </div>
                             <div class="card-footer bg-transparent border-0 p-4 pt-2"><a href="#cta-final" class="btn btn-primary w-100">Diferenciar mi Negocio</a></div>
@@ -169,12 +168,12 @@
                         <div class="package-card bg-dark text-white d-flex flex-column text-center">
                             <div class="card-header bg-transparent border-bottom-0 py-4">
                                 <h3 class="package-name">Alianza Estratégica</h3>
-                                <div class="package-objective text-white-50 fw-bold">
-                                    <p class="mb-2"><strong>Lidera el mercado con una plataforma superior en tecnología y datos.</strong></p>
-                                    <p class="fw-normal fst-italic">Diseñado para empresas y líderes de mercado que no se conforman con lo estándar y exigen una solución digital superior para consolidar su autoridad y optimizar su crecimiento.</p>
-                                </div>
+                                <div class="package-objective text-white-50"><p><strong>Lidera el mercado con una plataforma superior en tecnología y datos.</strong></p><p class="fw-normal fst-italic">Diseñado para empresas y líderes que exigen una solución digital superior para consolidar su autoridad y potenciar un crecimiento sostenido.</p></div>
                             </div>
-                            <div class="card-body p-4 pt-0"><h2 class="package-price my-2">550<span class="fs-6 text-white-50"> €</span></h2><ul class="feature-list list-unstyled text-start"><li class="value-header">Todo lo incluido en "Impacto y Crecimiento", y además:</li><li><i class="fas fa-check-circle text-success me-2"></i>Portal a medida + Consultoría Estratégica</li><li><i class="fas fa-check-circle text-success me-2"></i>Ecosistema Interactivo Premium</li><li><i class="fas fa-check-circle text-success me-2"></i>SEO, Seguridad Avanzada</li><li><i class="fas fa-check-circle text-success me-2"></i>Analítica de Conversión Avanzada</li><li><i class="fas fa-check-circle text-success me-2"></i>Política de Privacidad Personalizada</li><li><i class="fas fa-check-circle text-success me-2"></i>Dominio Incluido (1er Año)</li></ul></div>
+                            <div class="card-body p-4 pt-0">
+                                <div class="original-price"><s>550 €</s></div>
+                                <h2 class="package-price my-2">330<span class="fs-6 text-white-50"> €</span></h2>
+                                <ul class="feature-list list-unstyled text-start"><li class="value-header">Todo lo incluido en "Impacto y Crecimiento", y además:</li><li><i class="fas fa-check-circle text-success me-2"></i>Portal a medida + Consultoría Estratégica</li><li><i class="fas fa-check-circle text-success me-2"></i>Ecosistema Interactivo Premium</li><li><i class="fas fa-check-circle text-success me-2"></i>SEO, Seguridad Avanzada</li><li><i class="fas fa-check-circle text-success me-2"></i>Analítica de Conversión Avanzada</li><li><i class="fas fa-check-circle text-success me-2"></i>Política de Privacidad Personalizada</li><li><i class="fas fa-check-circle text-success me-2"></i>Dominio Incluido (1er Año)</li></ul></div>
                             <div class="card-footer bg-transparent border-0 p-4 pt-2"><a href="#cta-final" class="btn btn-outline-light w-100">Dominar mi Mercado</a></div>
                         </div>
                     </div>
@@ -192,12 +191,16 @@
         </section>
 
         <section class="offer-section py-5 text-center">
-            <div class="container col-lg-7">
-                <i class="fas fa-stopwatch fa-3x text-primary mb-3"></i>
-                <h2 class="h1">Una Oferta para Socios Fundadores en España</h2>
-                <p class="lead mt-3">Para lanzar nuestra solución en <strong>España</strong>, estoy buscando <strong>5 socios fundadores</strong> para acceder a estas soluciones a una inversión única de lanzamiento.<br><strong>Esta oferta es limitada y no se repetirá.</strong></p>
+            <div class="container col-lg-8">
+                <i class="fas fa-handshake-angle fa-3x text-primary mb-3"></i>
+                <h2 class="h1">Oportunidad Única: Invertimos en Nuestros Socios Fundadores</h2>
+                <h4 class="fw-normal text-muted mb-4">Como parte de nuestro lanzamiento en España, estamos cubriendo el 40% de la inversión para nuestros primeros 5 socios.</h4>
+                <p class="lead">Asegura tu solución digital con una <strong>inversión fundacional del 60%</strong> sobre el precio de lista. Única oportunidad para acceder a nuestros servicios a un valor excepcional.</p>
                 <div class="d-flex flex-column align-items-center">
-                    <div class="availability-counter my-4"><span class="fw-bold">Cupos Disponibles:</span><span class="slots">5 de 5</span></div>
+                    <div class="availability-counter my-4">
+                        <span class="fw-bold">Cupos Disponibles:</span>
+                        <span class="slots">5 de 5</span>
+                    </div>
                     <a href="#cta-final" class="btn btn-outline-primary">Quiero Ser Socio Fundador</a>
                 </div>
             </div>
